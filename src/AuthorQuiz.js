@@ -7,11 +7,27 @@ import Continue from './Continue';
 import Footer from './Footer';
 
 class AuthorQuiz extends Component {
+  authors = [
+    {
+      name: 'Mark Twain',
+      imageUrl: 'images/authors/marktwain.jpg',
+      imageSource: 'Wikimedia Commons',
+      books: ['The Adventrues of Huckleberry Finn']
+    }
+  ]
+
+  state = {
+    turnData: {
+      author: this.authors[0],
+      books: this.authors[0].books
+    }
+  }
+
   render() {
     return (
       <div className="container-fluid">
         <Hero />
-        <Turn />
+        <Turn {...this.state.turnData}/>
         <Continue />
         <Footer />
     Ï</div>
