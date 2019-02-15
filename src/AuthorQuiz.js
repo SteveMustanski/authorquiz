@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import './bootstrap.min.css';
 import './App.css';
+import Hero from './Hero';
+import Turn from './Turn';
+import Continue from './Continue';
 
 class AuthorQuiz extends Component {
   render() {
     return (
-      <div>Author Quiz</div>
+      <div className="container-fluid">
+        <Hero />
+        <Turn />
+        <Continue />
+    Ï</div>
     );
   }
 }
