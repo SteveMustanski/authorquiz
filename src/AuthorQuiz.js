@@ -4,6 +4,7 @@ import './App.css';
 import Hero from './Hero';
 import Turn from './Turn';
 import Continue from './Continue';
+import Footer from './Footer';
 
 class AuthorQuiz extends Component {
   render() {
@@ -12,6 +13,7 @@ class AuthorQuiz extends Component {
         <Hero />
         <Turn />
         <Continue />
+        <Footer />
     Ï</div>
     );
   }
