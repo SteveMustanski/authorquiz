@@ -10,7 +10,7 @@ const Turn = ({author, books}) => {
         <img src={author.imageUrl} className="authorimage" alt="Author" />
       </div>
       <div className="col-6">
-        {books.map((title) => <Book key={title}>{title} ></Book>)}
+        {books.map((title) => <Book key={title} title={title}/>)}
       </div>
     </div>
   );

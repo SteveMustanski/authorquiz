@@ -2,9 +2,11 @@ import React from 'react';
 import './bootstrap.min.css';
 import './App.css';
 
-const Book = () => {
+const Book = (props) => {
   return (
-    <div>this is the book div</div>
+    <div className="answer">
+    <h4>{props.title}</h4>
+    </div>
   )
 }
 
