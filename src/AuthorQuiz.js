@@ -12,7 +12,12 @@ class AuthorQuiz extends Component {
       name: 'Mark Twain',
       imageUrl: 'images/authors/marktwain.jpg',
       imageSource: 'Wikimedia Commons',
-      books: ['The Adventrues of Huckleberry Finn']
+      books: [
+        'The Adventrues of Huckleberry Finn',
+        'Life on the Missippi',
+        'Roughing it',
+        `Hitchhiker's Guide to the Galaxy`
+      ]
     }
   ]
 
