@@ -1,4 +1,5 @@
 import React from 'react';
+import Book from './Book'
 import './bootstrap.min.css';
 import './App.css';
 
@@ -9,7 +10,7 @@ const Turn = ({author, books}) => {
         <img src={author.imageUrl} className="authorimage" alt="Author" />
       </div>
       <div className="col-6">
-        {books.map((title) => <p>{title}</p>)}
+        {books.map((title) => <Book key={title}>{title} ></Book>)}
       </div>
     </div>
   );
