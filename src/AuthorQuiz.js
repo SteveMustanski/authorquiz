@@ -75,8 +75,8 @@ class AuthorQuiz extends Component {
         <Turn {...this.state.turnData}/>
         <Continue />
         <Footer />
-    Ï</div>
-    );
+    </div>
+    )
   }
 }
 
