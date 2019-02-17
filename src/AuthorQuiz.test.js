@@ -1,6 +1,19 @@
 import React from 'react';
 import AuthorQuiz from './AuthorQuiz';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+
+const state = {
+  turnData: {
+    books: ['The Shining', 'IT', 'David Copperfield', 'A Tale of Two Cities', 'Hamlet', 'Macbeth', 'Romeo and Juliet'],
+    author: {
+      name: 'Charles Dickens',
+      imageUrl: 'images/authors/charlesdickens.jpg',
+      imageSource: 'Wikimedia Commons',
+      books: ['David Copperfield', 'A Tale of Two Cities']
+    },
+  },
+  highlight: 'wrong'
+}
 
 describe('AuthorQuiz', function () {
   let mountedQuiz;
@@ -9,7 +22,7 @@ describe('AuthorQuiz', function () {
   })
 
   it('renders without crashing', () => {
-    shallow(<AuthorQuiz />)
+    shallow(<AuthorQuiz {...state} onAnswerSelected={()=>{}}/>)
   })
 
   it('displays a Hero component', function () {
@@ -24,4 +37,5 @@ describe('AuthorQuiz', function () {
     const footer = mountedQuiz.find('Footer');
     expect(footer.length).toBe(1);
   })
+  
 });
