@@ -65,14 +65,15 @@ class AuthorQuiz extends Component {
   }
 
   state = {
-    turnData: this.getTurnData(this.authors)
+    turnData: this.getTurnData(this.authors),
+    highlight: 'none'
   }
 
   render() {
     return (
       <div className="container-fluid">
         <Hero />
-        <Turn {...this.state.turnData}/>
+        <Turn {...this.state.turnData} highlight={this.state.highlight}/>
         <Continue />
         <Footer />
     </div>
