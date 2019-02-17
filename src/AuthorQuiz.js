@@ -48,6 +48,7 @@ class AuthorQuiz extends Component {
     }
   ]
   
+  // select 4 random books with at least one belonging to the select author
   getTurnData = (authors) => {
     const allBooks = authors.reduce( (p, c, i) => {
       return p.concat(c.books);
@@ -69,6 +70,7 @@ class AuthorQuiz extends Component {
     highlight: 'none'
   }
 
+  // sets the bg color of turn depending on if the answer is correct or not
   onAnswerSelected = (answer) => {
     const isCorrect = this.state.turnData.author.books.some((book) => book === answer);
     let newHighlight = isCorrect ? 'correct' : 'wrong';
