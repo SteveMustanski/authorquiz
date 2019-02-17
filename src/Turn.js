@@ -3,9 +3,9 @@ import Book from './Book'
 import './bootstrap.min.css';
 import './App.css';
 
-const Turn = ({author, books, highlight}) => {
+const Turn = ({author, books, highlight, onAnswerSelected}) => {
   // function to set background color
-  const highlightToBgColor = () => {
+  const highlightToBgColor = (highlight) => {
     const mapping = {
       'none': '',
       'correct': 'green',
@@ -13,13 +13,14 @@ const Turn = ({author, books, highlight}) => {
     }
     return mapping[highlight];
   }
+
   return (
     <div className="row turn" style={{backgroundColor: highlightToBgColor(highlight)}}>
       <div className="col-4 offset-1">
         <img src={author.imageUrl} className="authorimage" alt="Author" />
       </div>
       <div className="col-6">
-        {books.map((title) => <Book key={title} title={title}/>)}
+        {books.map((title) => <Book key={title} title={title} answerSelected={onAnswerSelected}/>)}
       </div>
     </div>
   );

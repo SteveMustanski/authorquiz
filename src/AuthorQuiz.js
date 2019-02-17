@@ -69,11 +69,20 @@ class AuthorQuiz extends Component {
     highlight: 'none'
   }
 
+  onAnswerSelected = (answer) => {
+    const isCorrect = this.state.turnData.author.books.some((book) => book === answer);
+    let newHighlight = isCorrect ? 'correct' : 'wrong';
+
+    this.setState(prevState => ({
+      highlight: newHighlight
+    }))
+  }
+
   render() {
     return (
       <div className="container-fluid">
         <Hero />
-        <Turn {...this.state.turnData} highlight={this.state.highlight}/>
+        <Turn {...this.state.turnData} highlight={this.state.highlight} onAnswerSelected={this.onAnswerSelected}/>
         <Continue />
         <Footer />
     </div>
