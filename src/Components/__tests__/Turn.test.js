@@ -1,5 +1,5 @@
 import React from 'react';
-import Turn from './Turn';
+import Turn from '../Turn';
 import { shallow } from 'enzyme';
 
 describe('Turn', function () {
@@ -16,11 +16,13 @@ describe('Turn', function () {
     turnData: {
       author: authors[0],
       books: authors[0].books
-    }
+    },
+    highlight: 'none'
   }
+
   let mountedTurn;
   beforeEach(() => {
-    mountedTurn = shallow(<Turn  {...state.turnData} />);
+    mountedTurn = shallow(<Turn  {...state.turnData} onAnswerSelected={()=>{}} />);
   })
 
   it('renders without crashing', () => {

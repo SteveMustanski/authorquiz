@@ -1,5 +1,5 @@
 import React from 'react';
-import AuthorQuiz from './AuthorQuiz';
+import AuthorQuiz from '../AuthorQuiz';
 import { shallow, mount } from 'enzyme';
 
 const state = {

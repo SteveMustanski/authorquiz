@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Book from './Book'
-import './bootstrap.min.css';
+import '../bootstrap.min.css';
 import './App.css';
 
 const Turn = ({author, books, highlight, onAnswerSelected}) => {
@@ -34,11 +34,8 @@ Turn.propTypes = {
     imageSource: PropTypes.string.isRequired,
     books: PropTypes.arrayOf(PropTypes.string).isRequired
   }),
-  books: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onAnswerSelected: PropTypes.func.isRequired,
-  highlight: PropTypes.string.isRequired
-    
-  
+  books: PropTypes.arrayOf(PropTypes.string).isRequired
+  // onAnswerSelected: PropTypes.func.isRequired,
+  // highlight: PropTypes.string.isRequired
 }
-
 export default Turn;

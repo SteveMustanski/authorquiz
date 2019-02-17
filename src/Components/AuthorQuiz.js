@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './bootstrap.min.css';
+import '../bootstrap.min.css';
 import './App.css';
 import Hero from './Hero';
 import Turn from './Turn';
