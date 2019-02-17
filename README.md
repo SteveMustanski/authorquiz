@@ -1,3 +1,20 @@
+# Author Quiz
+This is a project that has a simple author quiz where the user tries to select a book that was written by the author pictured on the left of the screen.  One or more of the choices will match the author.
+
+If the user selects correctly, the background color of the quiz turns green.  If the user chooses incorrectly, the background color of the quiz is turned red.
+
+## Packages used
+
+* react
+* react-dom
+* react-scripts
+* react-router-dom
+* enzyme
+* enzyme-adapter-react-16
+* underscore
+
+Jest is used for testing the application.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
