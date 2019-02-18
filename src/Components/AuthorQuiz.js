@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import '../bootstrap.min.css';
 import './App.css';
 import Hero from './Hero';
 import Turn from './Turn';
 import Continue from './Continue';
 import Footer from './Footer';
-import {shuffle, sample} from 'underscore';
+import { shuffle, sample } from 'underscore';
 
 class AuthorQuiz extends Component {
   authors = [
@@ -47,20 +48,20 @@ class AuthorQuiz extends Component {
       ]
     }
   ]
-  
+
   // select 4 random books with at least one belonging to the select author
   getTurnData = (authors) => {
-    const allBooks = authors.reduce( (p, c, i) => {
+    const allBooks = authors.reduce((p, c, i) => {
       return p.concat(c.books);
-    }, [] );
-    const fourRandomBooks = shuffle(allBooks).slice(0,4);
+    }, []);
+    const fourRandomBooks = shuffle(allBooks).slice(0, 4);
     const answer = sample(fourRandomBooks);
 
     return {
       books: fourRandomBooks,
       author: authors.find((author) =>
-      author.books.some((title) =>
-        title === answer))
+        author.books.some((title) =>
+          title === answer))
     }
 
   }
@@ -84,10 +85,15 @@ class AuthorQuiz extends Component {
     return (
       <div className="container-fluid">
         <Hero />
-        <Turn {...this.state.turnData} highlight={this.state.highlight} onAnswerSelected={this.onAnswerSelected}/>
+        <Turn {...this.state.turnData} highlight={this.state.highlight} onAnswerSelected={this.onAnswerSelected} />
         <Continue />
+        <div className="row">
+          <div className="col-12 offset-1">
+            <p><Link to='/add'>Add an Author</Link></p>
+          </div>
+        </div>
         <Footer />
-    </div>
+      </div>
     )
   }
 }
