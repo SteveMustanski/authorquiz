@@ -1,6 +1,6 @@
 import React from 'react';
 import AuthorQuiz from '../AuthorQuiz';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 const state = {
   turnData: {
