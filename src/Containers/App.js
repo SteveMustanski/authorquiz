@@ -5,13 +5,18 @@ import AddAuthorForm from './AddAuthorForm';
 
 
 class App extends Component {
+
+  AuthorWrapper = () => {
+    return <AddAuthorForm  />
+  }
+
   render() {
     return (
       <div>
         <BrowserRouter>
           <React.Fragment>
             <Route exact path='/' component={AuthorQuiz} />
-            <Route path='/add' component={AddAuthorForm} />
+            <Route path='/add' component={this.AuthorWrapper} />
           </React.Fragment>
         </BrowserRouter>
       </div>
