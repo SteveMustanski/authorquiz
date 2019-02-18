@@ -2,12 +2,14 @@ import React from 'react';
 import '../bootstrap.min.css';
 import './App.css';
 
-const Continue = () => {
+const Continue = (props) => {
   return (
-    <div className="row">
-      <div className="col-12 offset-1">
-        <p>Here is the continue</p>
-      </div>
+<div className="row continue">
+    { props.show 
+      ? <div className="col-11">
+          <button className="btn btn-primary btn-lg float-right" onClick={ props.onContinue}>Continue</button>
+        </div>
+      : null }
     </div>
   );
 }

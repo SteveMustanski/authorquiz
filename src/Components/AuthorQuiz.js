@@ -66,6 +66,15 @@ class AuthorQuiz extends Component {
 
   }
 
+  resetState = () => {
+    this.setState(
+      {
+        turnData: this.getTurnData(this.authors),
+        highlight: 'none'
+      }
+    )
+  }
+
   state = {
     turnData: this.getTurnData(this.authors),
     highlight: 'none'
@@ -81,12 +90,16 @@ class AuthorQuiz extends Component {
     }))
   }
 
+  onContinue = () => {
+    this.resetState();
+  }
+
   render() {
     return (
       <div className="container-fluid">
         <Hero />
         <Turn {...this.state.turnData} highlight={this.state.highlight} onAnswerSelected={this.onAnswerSelected} />
-        <Continue />
+        <Continue show={this.state.highlight === 'correct' ? true : false} onContinue={this.onContinue}/>
         <div className="row">
           <div className="col-12 offset-1">
             <p><Link to='/add'>Add an Author</Link></p>
