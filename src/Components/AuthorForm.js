@@ -13,6 +13,11 @@ class AuthorForm extends Component {
     });
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.onAddAuthor(this.state);
+  }
+
   render() {
     return (
       <form>
