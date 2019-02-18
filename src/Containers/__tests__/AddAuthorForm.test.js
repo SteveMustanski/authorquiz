@@ -11,7 +11,10 @@ describe('AddAuthorForm', function () {
   it('renders without crashing', () => {
     shallow(<AddAuthorForm />)
   })
-
+  it('displays the AuthorForm component', function () {
+    const author = mountedAddAuthor.find('AuthorForm');
+    expect(author.length).toBe(1);
+  })
   it('displays an h1 element', function () {
     const form = mountedAddAuthor.find('h1');
     expect(form.length).toBe(1);

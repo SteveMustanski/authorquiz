@@ -1,10 +1,12 @@
 import React from 'react';
+import './AddAuthor.css';
+import AuthorForm from '../Components/AuthorForm';
 
 const AddAuthorForm = (match) => {
   return (
-    <div>
+    <div className="AddAuthorForm">
       <h1>Add Author</h1>
-      <p>{JSON.stringify(match)}</p>
+      <AuthorForm />
     </div>
   );
 }
