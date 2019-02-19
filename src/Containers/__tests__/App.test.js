@@ -12,8 +12,4 @@ describe('App', function () {
     shallow(<App />)
   })
 
-  it('displays an AuthorQuiz component', function () {
-    const quiz = mountedApp.find('AuthorQuiz');
-    expect(quiz.length).toBe(1);
-  })
 });
